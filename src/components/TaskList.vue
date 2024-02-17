@@ -1,0 +1,86 @@
+<template>
+  <ul class="task-list-container">
+    <li v-bind:key="index" v-for="(task, index) in tasks">
+      <Task :task="task" />
+    </li>
+  </ul>
+</template>
+
+<script>
+import Task from "../components/Task";
+
+export default {
+  name: "TaskList",
+  components: {
+    Task,
+  },
+  data() {
+    return {
+      tasks: [
+        {
+          title: "Test Task 1",
+          description: "this is text description",
+        },
+        {
+          title: "Test Task 2",
+          description: "this is text description",
+        },
+        {
+          title: "Test Task 1",
+          description: "this is text description",
+        },
+        {
+          title: "Test Task 2",
+          description: "this is text description",
+        },
+        {
+          title: "Test Task 1",
+          description: "this is text description",
+        },
+        {
+          title: "Test Task 2",
+          description: "this is text description",
+        },
+        {
+          title: "Test Task 1",
+          description: "this is text description",
+        },
+        {
+          title: "Test Task 2",
+          description: "this is text description",
+        },
+        {
+          title: "Test Task 1",
+          description: "this is text description",
+        },
+        {
+          title: "Test Task 2",
+          description: "this is text description",
+        },
+        {
+          title: "Test Task 1",
+          description: "this is text description",
+        },
+        {
+          title: "Test Task 2",
+          description: "this is text description",
+        },
+      ],
+    };
+  },
+};
+</script>
+
+<style scoped>
+ul {
+  max-height: 250px;
+  overflow: auto;
+}
+li {
+  text-align: start;
+  flex-shrink: 0;
+  border-width: 0px 0px thin;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.12);
+}
+</style>
