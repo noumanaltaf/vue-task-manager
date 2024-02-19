@@ -8,65 +8,15 @@
 
 <script>
 import Task from "../components/Task";
+import { mapState } from "vuex";
 
 export default {
   name: "TaskList",
   components: {
     Task,
   },
-  data() {
-    return {
-      tasks: [
-        {
-          title: "Test Task 1",
-          description: "this is text description",
-        },
-        {
-          title: "Test Task 2",
-          description: "this is text description",
-        },
-        {
-          title: "Test Task 1",
-          description: "this is text description",
-        },
-        {
-          title: "Test Task 2",
-          description: "this is text description",
-        },
-        {
-          title: "Test Task 1",
-          description: "this is text description",
-        },
-        {
-          title: "Test Task 2",
-          description: "this is text description",
-        },
-        {
-          title: "Test Task 1",
-          description: "this is text description",
-        },
-        {
-          title: "Test Task 2",
-          description: "this is text description",
-        },
-        {
-          title: "Test Task 1",
-          description: "this is text description",
-        },
-        {
-          title: "Test Task 2",
-          description: "this is text description",
-        },
-        {
-          title: "Test Task 1",
-          description: "this is text description",
-        },
-        {
-          title: "Test Task 2",
-          description: "this is text description",
-        },
-      ],
-    };
+  computed: {
+    ...mapState(["tasks"]),
   },
 };
 </script>

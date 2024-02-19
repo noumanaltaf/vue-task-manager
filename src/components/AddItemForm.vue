@@ -1,22 +1,49 @@
 <template>
-  <input class="input" placeholder="title" name="title" type="text" />
-  <textarea
-    name="description"
-    placeholder="description"
-    id=""
-    cols="30"
-    rows="10"
-  ></textarea>
-  <button class="btn ripple">Add task</button>
+  <form @submit.prevent="addTask(form)">
+    <input
+      class="input"
+      v-model="form.title"
+      placeholder="title"
+      name="title"
+      type="text"
+    />
+    <textarea
+      name="description"
+      v-model="form.description"
+      placeholder="description"
+      id=""
+      cols="30"
+      rows="10"
+    ></textarea>
+    <button type="submit" class="btn ripple">Add task</button>
+  </form>
 </template>
 
 <script>
+import { mapActions } from "vuex";
+
 export default {
   name: "AddItemForm",
+  data() {
+    return {
+      form: {
+        title: "",
+        description: "",
+      },
+    };
+  },
+  methods: {
+    ...mapActions(["addTask"]),
+  },
 };
 </script>
 
 <style scoped>
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
 .input {
   padding: 10px;
   border: 1px solid #ccc;
