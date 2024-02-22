@@ -20,10 +20,9 @@
 </template>
 
 <script>
-import { mapActions } from "vuex";
 
 export default {
-  name: "AddItemForm",
+  name: "AddForm",
   data() {
     return {
       form: {
@@ -33,7 +32,13 @@ export default {
     };
   },
   methods: {
-    ...mapActions(["addTask"]),
+    addTask(task) {
+      this.$store.dispatch("addTask", task);
+      this.form = {
+        title: "",
+        description: "",
+      };
+    },
   },
 };
 </script>
