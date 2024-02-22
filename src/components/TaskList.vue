@@ -1,4 +1,5 @@
 <template>
+  <p>Double tap to change status.</p>
   <ul class="task-list-container">
     <li v-bind:key="index" v-for="(task, index) in tasks">
       <Task :task="task" />
@@ -32,5 +33,10 @@ li {
   border-width: 0px 0px thin;
   border-style: solid;
   border-color: rgba(0, 0, 0, 0.12);
+}
+p {
+  padding: 0;
+  margin: 0;
+  font-style: italic;
 }
 </style>
