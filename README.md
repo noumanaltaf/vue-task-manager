@@ -1,4 +1,5 @@
 # vue-task-manager
+Simple Task manager practice app created using <b>Vue 3 </b> and <b>Vuex 4 </b>.
 
 ## Project setup
 ```
